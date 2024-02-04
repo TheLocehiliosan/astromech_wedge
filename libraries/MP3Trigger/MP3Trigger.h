@@ -6,6 +6,7 @@ MP3Trigger.h
 Doesn't handle messages from the trigger at this point
 */
 
+#include <SoftwareSerial.h>
 #ifndef MP3_TRIGGER_H
 #define MP3_TRIGGER_H
 
@@ -19,8 +20,7 @@ class MP3Trigger{
   public:
 	MP3Trigger();
 	~MP3Trigger();
-	void setup(HardwareSerial* serial);
-	void setup();
+	void setup(SoftwareSerial* serial);
   	void play();
 	void stop();
 	void trigger(byte track);	//1–255
@@ -39,7 +39,7 @@ private:
 	byte mLoopTrack;
 	bool mPlaying;
 	void loop();
-	HardwareSerial* s;
+	SoftwareSerial* s;
 };
 
 #endif

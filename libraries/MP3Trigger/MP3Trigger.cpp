@@ -18,12 +18,7 @@ MP3Trigger::~MP3Trigger()
 	s = NULL;
 }
 
-void MP3Trigger::setup()
-{
-	setup(&Serial);
-}
-
-void MP3Trigger::setup(HardwareSerial* serial)
+void MP3Trigger::setup(SoftwareSerial* serial)
 {
 	s = serial;
 	s->begin(38400);
