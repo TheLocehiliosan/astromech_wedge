@@ -12,7 +12,7 @@
       the 5VCC of the Arduino.
 */
 
-#include <MP3Trigger.h>
+#include "Sound.h"
 #include <PS2X_lib.h>
 #include <Sabertooth.h>
 #include <SoftwareSerial.h>
@@ -135,11 +135,9 @@ Stepper scope_turn(
 );
 
 // sound object
-SoftwareSerial sound_serial(PIN_NON_READ, PIN_SOUND);
-MP3Trigger sound;
+Sound sound(PIN_NON_READ, PIN_SOUND);
 const int sound_table_count = sizeof(sound_table) / sizeof(sound_table[0]);
-byte volume = map(DEFAULT_VOLUME, 0, 100, 255, 0);
-byte volume_change = map(VOLUME_CHANGE, 0, 100, 0, 255);
+byte volume = DEFAULT_VOLUME;
 
 // remote object
 PS2X remote;
@@ -174,8 +172,7 @@ void init_motors() {
 }
 
 void init_sound() {
-  sound.setup(&sound_serial);
-  sound.setVolume(volume);
+  sound.volume(volume);
   Serial.println("Sound system initialized");
 }
 
@@ -373,15 +370,15 @@ void handle_volume() {
   if (modifiers()) return;
   byte old_volume = volume;
   if(remote.Button(PSB_PAD_UP)) {
-    volume = max(volume - volume_change, 0);
+    volume = min(volume + VOLUME_CHANGE, 100);
   }
   if(remote.Button(PSB_PAD_DOWN)) {
-    volume = min(volume + volume_change, 255);
+    volume = max(volume - VOLUME_CHANGE, 0);
   }
   if (old_volume != volume) {
     Serial.print("Volume updated:");
-    Serial.println(map(volume, 255, 0, 0, 100));
-    sound.setVolume(volume);
+    Serial.println(volume);
+    sound.volume(volume);
   }
 }
 
