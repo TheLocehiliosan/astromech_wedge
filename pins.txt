@@ -1,0 +1,23 @@
+Arduino Pins
+ 0 - ---- - Rx
+ 1 - ---- - Tx
+ 2 - LIFT - In1
+ 3 - LIFT - In2
+ 4 - LIFT - In3
+ 5 - LIFT - In4
+ 6 - DOME - Serial
+ 7 - FOOT - Serial
+
+ 8 - PS2X - Data
+ 9 - PS2X - Command
+10 - PS2X - Attention
+11 - PS2X - Clock
+12 - MP3T - Serial
+13 - ---- - Free
+
+A0 - ---- - Free
+A1 - ---- - Used as read line for one-way serial ports
+A2 - TURN - In4
+A3 - TURN - In3
+A4 - TURN - In2
+A5 - TURN - In1
