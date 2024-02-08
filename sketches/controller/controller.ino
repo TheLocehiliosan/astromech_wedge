@@ -19,23 +19,23 @@
 #include <Stepper.h>
 
 // PINS (avoid 0 & 1 to preserve serial communication)
-// Remaining free pins: 6, A4
-#define PIN_NON_READ     A5
-#define PIN_DOME_MOTOR    5
+// Remaining free pins: 13, A0
+#define PIN_NON_READ     A1
+#define PIN_DOME_MOTOR    6
 #define PIN_DRIVE_MOTOR   7
-#define PIN_SOUND         2
-#define PIN_REMOTE_CLK   13
-#define PIN_REMOTE_CMD   11
+#define PIN_SOUND        12
+#define PIN_REMOTE_CLK   11
+#define PIN_REMOTE_CMD    9
 #define PIN_REMOTE_ATT   10
-#define PIN_REMOTE_DAT   12
-#define PIN_SCOPE_LIFT_1 A0
-#define PIN_SCOPE_LIFT_2 A1
-#define PIN_SCOPE_LIFT_3 A2
-#define PIN_SCOPE_LIFT_4 A3
-#define PIN_SCOPE_TURN_1  3
-#define PIN_SCOPE_TURN_2  4
-#define PIN_SCOPE_TURN_3  8
-#define PIN_SCOPE_TURN_4  9
+#define PIN_REMOTE_DAT    8
+#define PIN_SCOPE_LIFT_1  2
+#define PIN_SCOPE_LIFT_2  3
+#define PIN_SCOPE_LIFT_3  4
+#define PIN_SCOPE_LIFT_4  5
+#define PIN_SCOPE_TURN_1 A2
+#define PIN_SCOPE_TURN_2 A3
+#define PIN_SCOPE_TURN_3 A4
+#define PIN_SCOPE_TURN_4 A5
 
 // Calibration
 #define DOME_DEADBAND  10
