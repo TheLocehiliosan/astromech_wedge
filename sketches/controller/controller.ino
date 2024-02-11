@@ -163,7 +163,6 @@ void init_motors() {
   dome_motor.motor(1, 0);
   Serial.println("Dome motor initialized");
   drive_serial.begin(SABERTOOTH_BAUD);
-  drive_motor.autobaud();
   drive_motor.setTimeout(SABERTOOTH_TIMEOUT);
   drive_motor.setDeadband(DRIVE_DEADBAND);
   drive_motor.drive(0); drive_motor.turn(0);
