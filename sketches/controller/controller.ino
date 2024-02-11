@@ -55,7 +55,7 @@
 #define SERIAL_BAUD 9600
 
 #define DEFAULT_VOLUME 80
-#define VOLUME_CHANGE  5
+#define VOLUME_CHANGE  1
 
 #define REMOTE_CONNECTION_ATTEMPTS 30
 
@@ -215,7 +215,9 @@ void loop() {
 
   // show_button_state();
 
-  delay(50);
+  /* delay(50); */
+  scope_lift.run();
+  scope_turn.run();
 }
 
 bool abort(char msg[]) {
