@@ -16,7 +16,7 @@
 #include <PS2X_lib.h>
 #include <Sabertooth.h>
 #include <SoftwareSerial.h>
-#include <Stepper.h>
+#include <AccelStepper.h>
 
 // PINS (avoid 0 & 1 to preserve serial communication)
 // Remaining free pins: 13, A0
@@ -119,15 +119,15 @@ uint8_t turn_pct_upper = 255 - turn_pct_lower;
 uint8_t turn_ramp = DRIVE_TURN_RAMP * DRIVE_TURN_MAX;
 
 // periscope motors
-Stepper scope_lift(
-  SCOPE_LIFT_STEPS_PER_REV,
+AccelStepper scope_lift(
+  AccelStepper::FULL4WIRE,
   PIN_SCOPE_LIFT_1,
   PIN_SCOPE_LIFT_3,
   PIN_SCOPE_LIFT_2,
   PIN_SCOPE_LIFT_4
 );
-Stepper scope_turn(
-  SCOPE_TURN_STEPS_PER_REV,
+AccelStepper scope_turn(
+  AccelStepper::FULL4WIRE,
   PIN_SCOPE_TURN_1,
   PIN_SCOPE_TURN_3,
   PIN_SCOPE_TURN_2,
