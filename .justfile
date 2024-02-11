@@ -1,5 +1,5 @@
 fqbn := "arduino:avr:uno"
-arduino_port := `ls /dev/cu.usbmodem*`
+arduino_port := `ls /dev/cu.usb*`
 default_sketch := "controller"
 
 _list:
